@@ -34,7 +34,6 @@ const Footer = () => {
 const scrollSection = (id:string)=>{
 
   const el = typeof document !== 'undefined' ? document.getElementById(id) : null;
-  console.log("el value: ",el)
 if(el){
   el.scrollIntoView({behavior:"smooth",block:"start"})
   return
@@ -43,46 +42,48 @@ navigate("/")
 setTimeout(()=>{
 const el2 = document.getElementById(id)
 el2?.scrollIntoView({behavior:"smooth",block:"start"})
-console.log("el2 value: ",el2)
 },200)
 }
   return (
     <motion.footer
-     
-      
-      className=" h-[100vh]  overflow-hidden  bg-black p-6 font-display md:p-10"
+      className="flex h-screen min-h-[560px] flex-col justify-between overflow-hidden bg-black text-white px-6 py-8 font-bold text-black sm:px-10 sm:py-10 lg:px-16 lg:py-12"
     >
-      <div className="flex flex-col gap-40 md:gap-30">
         <motion.div
         variants={container}
         initial="offscreen"
         whileInView="onscreen"
-
-        className="flex justify-between items-center mt-6 ">
-          <motion.p variants={child} className="text-[#F7F6F2]  text-xs sm:text-xs md:text-sm lg:text-sm">@{new Date().getFullYear()}</motion.p>
-          <motion.p variants={child} className="flex gap-4 items-center text-[#F7F6F2] uppercase text-xs sm:text-xs md:text-sm lg:text-sm"> back to top <button onClick={()=>scrollSection("Home")} className="bg-gray-400 cursor-pointer hover:bg-gray-300 transition-all text-[#F7F6F2] px-3 py-3 rounded-full hover:text-black"><ArrowUp size={14}/></button></motion.p>
+        viewport={{ once: true }}
+        className="flex items-center justify-between">
+          <motion.p variants={child} className="text-xs sm:text-sm">© {new Date().getFullYear()}</motion.p>
+          <motion.div variants={child} className="flex items-center gap-4 text-xs uppercase sm:text-sm">
+            <span>Back to top</span>
+            <button aria-label="Back to top" onClick={()=>scrollSection("Home")} className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-white text-black transition-colors hover:bg-neutral-600">
+              <ArrowUp size={16}/>
+            </button>
+          </motion.div>
         </motion.div>
-      <motion.div 
-       variants={container}
+
+      <motion.div
+        variants={container}
         initial="offscreen"
         whileInView="onscreen"
-      className="flex flex-col gap-10 items-start ">
-<motion.div
- variants={container}
-        initial="offscreen"
-        whileInView="onscreen"
-className="">      
-   <motion.p variants={child}  className="text-xs md:text-sm text-[#F7F6F2]">
-  
-  OPEN TO EXCITING OPPORTUNITIES.</motion.p></motion.div>
-        <motion.p  variants={child} className=" text-gray-400 text-3xl leading-[0.9]
-           sm:text-5xl whitespace-nowrap scale-y-200  md:text-6xl lg:text-8xl uppercase">Let's work <span className="text-[#F7F6F2]">together</span></motion.p>
+        viewport={{ once: true }}
+        className="flex flex-col justify-center gap-4 py-8"
+      >
+        <motion.p variants={child} className="text-xs font-medium uppercase sm:text-sm">
+          OPEN TO EXCITING OPPORTUNITIES.
+        </motion.p>
+        <motion.p variants={child} className="whitespace-nowrap text-[clamp(2.5rem,13vw,11rem)] font-medium uppercase leading-[0.85] tracking-[-0.06em] text-neutral-200">
+          Let's work
+        </motion.p>
       </motion.div>
-      <div className="grid w-full px grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-2 ">
+
+      <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
        <motion.div
         variants={container}
         initial="offscreen"
         whileInView="onscreen"
+        viewport={{ once: true }}
        className="flex flex-wrap gap-3">
         {
           [{text:"Get in touch",
@@ -107,7 +108,7 @@ className="">
                   duration:0.3,
                   ease:"easeInOut"
                   
-                }}} whileTap={{y:0}} key={i} className="text-black  shadow-2xl shadow-white bg-[#F7F6F2] min-w-[4.6rem] flex justify-center items-center min-h-[2rem] md:min-w-[5rem] md:min-h-[2rem]  rounded-2xl text-xs cursor-pointer hover:bg-neutral-300 hover-text-white border border-neutral-300 shadow-sm">{context.text}</motion.a>
+                }}} whileTap={{y:0}} key={i} className="flex min-h-10 min-w-24 items-center justify-center rounded-full border bg-[#F7F6F2] border-[#F7F6F2] px-5 text-xs uppercase text-black transition-colors hover:bg-neutral-100">{context.text}</motion.a>
               })
         }
       </motion.div>
@@ -115,13 +116,12 @@ className="">
        variants={container}
         initial="offscreen"
         whileInView="onscreen"
+        viewport={{ once: true }}
       >
         <motion.p
         variants={child}
-        className="text-white text-xs md:text-sm lg:text-md"><span className="text-gray-400">Designed and developed by:</span> Nanikumar</motion.p>
+        className="text-xs font-medium text-white sm:text-right sm:text-sm"><span>Designed and developed by:</span> <span className="text-[#F7F6F2]">Nanikumar</span></motion.p>
       </motion.div>
-      </div>
-      
       </div>
     </motion.footer>
   )

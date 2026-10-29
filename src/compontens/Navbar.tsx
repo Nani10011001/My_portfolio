@@ -78,7 +78,7 @@ console.log("el2 value: ",el2)
 className="absolute right-0 top-full z-50 mt-2
 w-40 md:w-52 max-w-[calc(100vw-2rem)] h-auto
 overflow-hidden rounded-2xl border border-black/10
-bg-[#F7F6F2] p-3 shadow-lg backdrop-blur-xl"
+bg-primary p-3 shadow-lg backdrop-blur-xl"
               >
                 <div className="flex flex-col gap-1 md:gap-2">
                   {menuItems.map((item) => (

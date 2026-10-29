@@ -1,96 +1,57 @@
+import {
+  SiReact,
+ 
+  SiTypescript,
+  SiTailwindcss,
+  SiVercel,
+  SiFigma,
+  SiGithub,
+  SiNodedotjs,
+  SiPython,
+  SiFastapi,
+  SiMongodb,
+  SiLangchain,
+ 
+} from "react-icons/si"
 
-import { motion, stagger, type Variants } from "framer-motion"
-import {SkillDataset} from "../assets/SkillDataset" 
-interface SkillDataSetInterface {
-  id:number;
-  category:string;
-  title:string;
-  skills:string[];
+const skills = [
+  { name: "React", Icon: SiReact },
 
-}
+  { name: "TypeScript", Icon: SiTypescript },
+  { name: "Tailwind CSS", Icon: SiTailwindcss },
+  { name: "Vercel", Icon: SiVercel },
+  { name: "Figma", Icon: SiFigma },
+  { name: "GitHub", Icon: SiGithub },
+  { name: "Node.js", Icon: SiNodedotjs },
+  { name: "Python", Icon: SiPython },
+  { name: "FastAPI", Icon: SiFastapi },
+  { name: "MongoDB", Icon: SiMongodb },
+  { name: "LangChain", Icon: SiLangchain },
+]
+
 const Skill = () => {
-/*   const sectionRef = useRef<HTMLElement | null>(null)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["end start", "end start"]
-  })
-    const scale = useTransform(scrollYProgress,[0,1],[1,0.8])8*/
-  const skillsData: SkillDataSetInterface[] = SkillDataset as SkillDataSetInterface[]
- const container: Variants = {
-    offscreen: {
-  
-      opacity:0
-    },
-    onscreen:{
-  
-      opacity:1,
-      transition:{
-        delayChildren:stagger(0.3,{startDelay:0.2})
-      }
-    }
-  }
-  const  child: Variants = {
-    offscreen:{
-      y:20,
-      opacity:0
-    },
-    onscreen: {
-      y:0,
-      opacity:1,
-      transition:{
-        duration:0.8,
-        delay:0.5,
-        type:"spring"
-      }
-    }
-  }
   return (
-  <motion.section 
-  
-  className="bg-black px-4 py-14   sm:px-6 md:px-10 md:py-20">
-    <motion.div
-    variants={container}
-    initial="offscreen"
-    whileInView="onscreen"
-
-    className="mx-auto max-w-6xl">
-      <motion.p variants={child} className="text-xl font-extralight text-gray-400 uppercase  sm:text-2xl lg:text-3xl">
-        02 / What I Work With
-      </motion.p>
-
-      <motion.h2 variants={child} className="my-5 text-3xl font-bold uppercase sm:text-4xl lg:text-5xl">
-        <span className="text-gray-400">Technical</span>{" "}
-        <span className="text-[#F7F6F2]">Expertise.</span>
-      </motion.h2>
-
-      <motion.p variants={child} className="max-w-2xl text-sm leading-relaxed text-[#F7F6F2] sm:text-base lg:text-lg">
-        Technologies I use to build intelligent applications and scalable
-        backend systems.
-      </motion.p>
-
-      <div className="mt-10 grid grid-cols-1 gap-x-12 sm:grid-cols-2 lg:mt-14">
-        {skillsData.map(({ id, category, title, skills }) => (
-          <motion.div initial="offscreen" whileInView="onscreen" key={id} className="border-t border-black/20 py-6">
-            <motion.p variants={child} className="text-sm font-semibold uppercase tracking-wider text-gray-400">
-              {category}
-            </motion.p>
-            <motion.h3 variants={child} className="mt-1 text-lg font-bold text-[#F7F6F2] sm:text-xl">
-              {title}
-            </motion.h3>
-
-            <motion.ul variants={child} className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
-              {skills.map((skill, index) => (
-                <li key={`${skill}-${index}`} className="text-sm text-[#F7F6F2] sm:text-base">
-                  {skill}
-                </li>
-              ))}
-            </motion.ul>
-          </motion.div>
+    <section className="min-h-screen bg-primary px-5 py-12 sm:px-8 sm:py-16 md:px-10">
+      <h2 className="mb-8 text-xs font-medium uppercase tracking-wide text-white sm:mb-12 sm:text-sm">
+        My tech stack
+      </h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+        {skills.map(({ name, Icon }) => (
+          <div
+            key={name}
+            title={name}
+            data-cursor-light
+            className="group flex aspect-[1.25] min-h-28 cursor-pointer items-center justify-center bg-transparent transition-colors duration-300 hover:bg-black sm:min-h-36 md:min-h-40"
+          >
+            <Icon
+              aria-label={name}
+              className="h-10 w-10 text-black transition-colors duration-300 group-hover:text-white sm:h-12 sm:w-12 md:h-14 md:w-14"
+            />
+          </div>
         ))}
       </div>
-    </motion.div>
-  </motion.section>
-)
+    </section>
+  )
 }
 
 export default Skill

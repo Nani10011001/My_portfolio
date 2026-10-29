@@ -1,6 +1,7 @@
 import { motion,useTransform,stagger, type MotionValue, type Variants } from "framer-motion"
 import Navbar from "./Navbar"
 import { ArrowDown } from "lucide-react";
+import { useMediaQuery } from "react-responsive";
 
  interface HerosectionScreenYProgressProps {
 scrollYProgress: MotionValue<number>
@@ -39,10 +40,13 @@ const Herosection = ({
 }:HerosectionScreenYProgressProps) => {
    const scale = useTransform(scrollYProgress, [0,1],[1,0.8])
    const rotate = useTransform(scrollYProgress, [0,1],[0,-6])
+   const smallScreen = useMediaQuery({
+    maxWidth:768
+   })
   return (
     <motion.section
-      style={{ scale: scale, rotate: rotate }}
-      className="relative min-h-screen  flex flex-col bg-[#F7F6F2] items-center gap-45 sm:gap-34 md:gap-20 pb-10 px-4 sm:px-6"
+      style={ smallScreen ? undefined : { scale: scale, rotate: rotate }}
+      className="relative min-h-screen   flex flex-col bg-primary items-center gap-45 sm:gap-34 md:gap-20 pb-10 px-4 sm:px-6"
     >
       <div className="relative z-10   w-full">
         <Navbar conatiner={container} childrens={child} />
@@ -77,9 +81,9 @@ const Herosection = ({
           <motion.p 
           variants={child}
              className="text-5xl text-center font-[Inter] flex flex-col  leading-[0.85] tracking-[-0.065em] font-extralight  uppercase sm:text-6xl md:text-8xl lg:text-9xl ">
-          <span   className="font-[Inter] font-light">  AI ENGINEER</span>
-          <span   className="lg:text-8xl font-extralight ">  &FUll-stack</span>
-           <span   className="lg:text-8xl font-extralight"> BUILDER</span>
+          <span   className="font-[inter] font-light">  AI ENGINEER</span>
+          <span   className="lg:text-8xl  font-extralight ">  &FUll-stack</span>
+           <span   className="lg:text-8xl  font-extralight"> BUILDER</span>
           </motion.p>
           <motion.p 
           variants={child}

@@ -7,7 +7,8 @@ import SubHero from "../compontens/SubHero"
 import Skill from "../compontens/Skill"
 import Ideas from "../compontens/Ideas"
 import FooterAnimate from "../compontens/FooterAnimate"
-import LetWork from "../compontens/Letwork"
+import LetWork from "../compontens/Project"
+import PageReveal from "../compontens/PageReveal"
 const Home = () => {
      const container = useRef(null)
   const {scrollYProgress} = useScroll(
@@ -25,8 +26,9 @@ const Home = () => {
   requestAnimationFrame(raf)
     },[])
   return (
-    <section ref={container} className="relative h-[200vh] bg-[#1111] ">
+    <section ref={container} className="relative h-[200vh] bg-primary">
      <section id="Home">
+    <PageReveal/>
       <Herosection scrollYProgress={scrollYProgress}/>
       </section> 
      

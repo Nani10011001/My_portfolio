@@ -59,7 +59,7 @@ const Word = ({
   return (
     <section
       ref={container}
-      className="relative h-[200vh] bg-white"
+      className="relative h-[200vh] bg-primary"
     >
       <div className="sticky top-0 flex h-screen items-center
         justify-center px-5 sm:px-10">
