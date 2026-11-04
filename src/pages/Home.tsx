@@ -26,7 +26,7 @@ const Home = () => {
   requestAnimationFrame(raf)
     },[])
   return (
-    <section ref={container} className="relative h-[200vh] bg-primary">
+    <section ref={container} className="relative h-[200vh] bg-black">
      <section id="Home">
     <PageReveal/>
       <Herosection scrollYProgress={scrollYProgress}/>

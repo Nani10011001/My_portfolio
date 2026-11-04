@@ -8,10 +8,8 @@ import {
   type MotionValue,
 } from "framer-motion";
 
-const ideaText = `AI-powered applications and scalable backend
-systems designed to solve real problems,
-simplify complexity, and turn ambitious ideas
-into useful products.`.split(" ");
+const ideaText = `Most of my work happens behind the scenes — designing systems, solving problems, and refining ideas until they work in the real world. I bring AI engineering, backend development, and frontend design together to build thoughtful, functional products, 
+from the underlying logic to the final user experience.`.split(" ");
 
 
 
@@ -66,6 +64,7 @@ const Word = ({
         <p className="max-w-5xl text-center text-2xl
           leading-snug tracking-tight sm:text-3xl
           lg:text-4xl">
+            <p className="text-3xl md:text-4xl uppercase tracking-wide  my-3 font-bold">how i work ?</p>
           From ideas to intelligent products. I build{" "}
           {ideaText.map((word, i) => (
             <Word

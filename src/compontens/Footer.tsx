@@ -46,7 +46,7 @@ el2?.scrollIntoView({behavior:"smooth",block:"start"})
 }
   return (
     <motion.footer
-      className="flex h-screen min-h-[560px] flex-col justify-between overflow-hidden bg-black text-white px-6 py-8 font-bold text-black sm:px-10 sm:py-10 lg:px-16 lg:py-12"
+      className="flex relative h-screen min-h-[560px] flex-col justify-between overflow-hidden bg-black text-white px-6 py-8 font-bold text-black sm:px-10 sm:py-10 lg:px-16 lg:py-12"
     >
         <motion.div
         variants={container}
@@ -70,15 +70,15 @@ el2?.scrollIntoView({behavior:"smooth",block:"start"})
         viewport={{ once: true }}
         className="flex flex-col justify-center gap-4 py-8"
       >
-        <motion.p variants={child} className="text-xs font-medium uppercase sm:text-sm">
+        <motion.p variants={child} className="text-xs z-100 font-medium uppercase sm:text-sm">
           OPEN TO EXCITING OPPORTUNITIES.
         </motion.p>
-        <motion.p variants={child} className="whitespace-nowrap text-[clamp(2.5rem,13vw,11rem)] font-medium uppercase leading-[0.85] tracking-[-0.06em] text-neutral-200">
+        <motion.p variants={child} className=" z-100 whitespace-nowrap text-[clamp(2.5rem,13vw,11rem)] font-medium uppercase leading-[0.85] tracking-[-0.06em] text-neutral-200">
           Let's work
         </motion.p>
       </motion.div>
 
-      <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+      <div className="flex flex-col   items-start justify-between gap-6 sm:flex-row sm:items-center">
        <motion.div
         variants={container}
         initial="offscreen"
@@ -108,7 +108,7 @@ el2?.scrollIntoView({behavior:"smooth",block:"start"})
                   duration:0.3,
                   ease:"easeInOut"
                   
-                }}} whileTap={{y:0}} key={i} className="flex min-h-10 min-w-24 items-center justify-center rounded-full border bg-[#F7F6F2] border-[#F7F6F2] px-5 text-xs uppercase text-black transition-colors hover:bg-neutral-100">{context.text}</motion.a>
+                }}} whileTap={{y:0}} key={i} className="flex relative z-100 min-h-10 min-w-24 items-center justify-center rounded-full border bg-primary border-[#F7F6F2] px-5 text-xs uppercase text-black transition-colors hover:bg-neutral-100">{context.text}</motion.a>
               })
         }
       </motion.div>

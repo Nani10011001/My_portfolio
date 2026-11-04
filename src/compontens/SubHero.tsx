@@ -7,21 +7,7 @@ import { useMediaQuery } from "react-responsive"
 interface subHeroScrollYProgressProps {
     scrollYProgress: MotionValue<number>
 }
-const imageVarient:Variants = {
-  offscreen:{
-    x:70,
-    opacity:0
-  },
-  onscreen: {
-    x:0,
-    opacity:1,
-    transition:{
-      duration:1.4,
-      type:"tween",
-      delay:0.5
-    }
-  }
-}
+
 const container: Variants = {
       offscreen: {
         opacity:0
@@ -85,7 +71,7 @@ const yImage = useTransform(
     <motion.section
    
       style={ smallScreen ? undefined: { scale: scale, rotate: rotate }}
-      className="bg-primary w-full px-4 py-14 sm:px-6 md:px-10 md:py-20 z-10 min-h-screen"
+      className="bg-primary w-full px-4 py-14 relative sm:px-6 md:px-10 md:py-20 z-10 min-h-screen"
     >
       <motion.div
      initial="offscreen"
@@ -99,19 +85,19 @@ const yImage = useTransform(
          01 / About me
         </motion.div>
 
-        <div  className="mt-8 md:mt-14 flex flex-col gap-8  md:flex-row md:items-center md:justify-between">
+        <div  className="mt-8 md:mt-14 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <motion.div
            initial="offscreen"
     whileInView="onscreen"
     variants={container}
-          className="order-2 w-full md:order-1 md:max-w-2xl text-center md:text-left">
+          className="order-2 w-full md:order-1   md:max-w-2xl text-center md:text-left">
             <motion.p variants={child} className="text-3xl sm:text-4xl text-shadow-2xs text-shadow-black md:text-6xl scale-y-110 font-bold text-black leading-tight">
             Hey.
               
   
             </motion.p>
 
-            <div className="mt-5 w-full max-w-2xl">
+            <div className="mt-5 w-full  max-w-2xl">
               <p className="   text-2xl md:text-2xl leading-9 text-black ">
                 {
                   introduction.map((context:string,i:number)=>{
@@ -137,12 +123,12 @@ const yImage = useTransform(
 
           <motion.div 
           ref={ref}
-          className="order-1 flex justify-center md:order-2 md:w-[45%] md:shrink-0 md:justify-end">
+          className="order-1 flex justify-center z-100 md:order-2 md:w-[45%] md:shrink-0 md:justify-end">
             <motion.img
               src={NaniImg}
               style={{y:yImage,scale:scaleImage}}
               alt="Nani"
-              className="w-full max-w-[260px] sm:max-w-[300px] md:w-full md:max-w-[600px] h-[320px] sm:h-[380px] md:h-[470px] object-cover rounded-2xl shadow-xl shadow-slate-900/40"
+              className=" relative z-100 w-full max-w-[260px] sm:max-w-[300px] md:w-full md:max-w-[600px] h-[320px] sm:h-[380px] md:h-[470px] object-cover rounded-2xl shadow-xl shadow-slate-900/40"
             />
           </motion.div>
         </div>

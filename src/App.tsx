@@ -23,15 +23,18 @@ function App() {
   }
 
   return (
-    <main onPointerMove={moveCursor} onPointerLeave={() => setShowCursor(false)}>
-      <Home/>
+    <main
+      className="relative isolate"
+      onPointerMove={moveCursor}
+      onPointerLeave={() => setShowCursor(false)}
+    >
+      <div className="relative z-10">
+        <Home />
+      </div>
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-[60]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(90deg, transparent 0, transparent 95px, rgba(0, 0, 0, 0.15) 96px)",
-        }}
+        className="pointer-events-none fixed inset-0 z-0"
+        
       />
       {showCursor && (
         <motion.div

@@ -20,7 +20,7 @@ const PageReveal = () => {
      }
     }}
     
-    className="fixed inset-0 z-100 flex min-h-screen w-full items-center justify-center overflow-hidden bg-primary px-4 text-black">
+    className="fixed inset-0 z-120 flex min-h-screen w-full items-center justify-center overflow-hidden bg-primary px-4 text-black">
       <div className="relative -translate-y-[7vh] aspect-[613/320] w-[min(88vw,613px)]">
         <svg
         className="absolute inset-0 h-full w-full"
