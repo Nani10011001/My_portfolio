@@ -46,7 +46,8 @@ const Herosection = ({
   return (
     <motion.section
       style={ smallScreen ? undefined : { scale: scale, rotate: rotate }}
-      className="relative min-h-screen   flex flex-col bg-primary items-center gap-45 sm:gap-34 md:gap-20 pb-10 px-4 sm:px-6"
+      
+      className="herosection relative min-h-screen   flex flex-col bg-primary items-center gap-45 sm:gap-34 md:gap-20 pb-10 px-4 sm:px-6"
     >
       <div className="relative z-10   w-full">
         <Navbar conatiner={container} childrens={child} />

@@ -4,7 +4,7 @@ import Footer from './Footer'
 const FooterAnimate = () => {
   return (
     <div
-      className='relative  h-screen  '
+      className='relative footersection  h-screen  '
       style={{ clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' }}
     >
        

@@ -71,7 +71,7 @@ const yImage = useTransform(
     <motion.section
    
       style={ smallScreen ? undefined: { scale: scale, rotate: rotate }}
-      className="bg-primary w-full px-4 py-14 relative sm:px-6 md:px-10 md:py-20 z-10 min-h-screen"
+      className="bg-primary w-full px-4 subhero py-14 relative md:px-10 md:py-20 z-10 min-h-screen"
     >
       <motion.div
      initial="offscreen"
@@ -81,8 +81,8 @@ const yImage = useTransform(
       margin:"-40px"
     }}
       className="mx-auto max-w-6xl">
-        <motion.div variants={child} className="text-3xl sm:text-4xl font-bold text-black">
-         01 / About me
+        <motion.div variants={child} className="text-xs uppercase sm:text-sm font-medium text-black">
+          About me
         </motion.div>
 
         <div  className="mt-8 md:mt-14 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
@@ -91,14 +91,14 @@ const yImage = useTransform(
     whileInView="onscreen"
     variants={container}
           className="order-2 w-full md:order-1   md:max-w-2xl text-center md:text-left">
-            <motion.p variants={child} className="text-3xl sm:text-4xl text-shadow-2xs text-shadow-black md:text-6xl scale-y-110 font-bold text-black leading-tight">
-            Hey.
+            <motion.p variants={child} className="text-4xl  text-shadow-2xs text-shadow-black md:text-7xl scale-y-110 font-bold text-black leading-tight">
+            Hey .
               
   
             </motion.p>
 
             <div className="mt-5 w-full  max-w-2xl">
-              <p className="   text-2xl md:text-2xl leading-9 text-black ">
+              <p className="   text-md max-w-2xl text-left font-extralight  md:text-xl md:leading-8 text-black ">
                 {
                   introduction.map((context:string,i:number)=>{
                     return <motion.span

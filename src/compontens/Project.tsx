@@ -28,7 +28,7 @@ const projects = [
 
 const LetWork = () => {
   return (
-    <section className="min-h-screen w-full  bg-primary px-4 py-12 text-black sm:px-6 sm:py-16 md:px-10 lg:px-14">
+    <section className="projects min-h-screen w-full  bg-primary px-4 py-12 text-black  md:px-10 ">
       <div className="flex items-start justify-between gap-2">
         <h2
           style={{ fontSize: "clamp(3.5rem, 16vw, 15rem)" }}

@@ -24,6 +24,10 @@ body {
   margin: 0%;
   padding: 0%;
 }
+.herosection,.subhero,.ideas, .projects {
+  background-image: linear-gradient(to right, #e5e5e5 1px, transparent 1px);
+  background-size: 80px 100%;
+}
 
 @media (hover: hover) and (pointer: fine) {
   main,

@@ -57,14 +57,14 @@ const Word = ({
   return (
     <section
       ref={container}
-      className="relative h-[200vh] bg-primary"
+      className="relative ideas h-[200vh] bg-primary"
     >
       <div className="sticky top-0 flex h-screen items-center
-        justify-center px-5 sm:px-10">
-        <p className="max-w-5xl text-center text-2xl
-          leading-snug tracking-tight sm:text-3xl
-          lg:text-4xl">
-            <p className="text-3xl md:text-4xl uppercase tracking-wide  my-3 font-bold">how i work ?</p>
+        justify-center px-4 sm:px-10">
+        <p className="max-w-5xl  text-center text-center text-md
+          leading-snug tracking-tight 
+          md:text-xl">
+            <p className="text-3xl  md:text-4xl uppercase tracking-wide  my-3 font-bold">how i work ?</p>
           From ideas to intelligent products. I build{" "}
           {ideaText.map((word, i) => (
             <Word

@@ -35,11 +35,11 @@ console.log("el2 value: ",el2)
       initial="offscreen"
       whileInView="onscreen"
       variants={conatiner}
-      className="w-full px-4 sm:px-0"
+      className="w-full px-4 "
     >
       <motion.nav
         variants={childrens}
-        className="relative flex h-14 w-full items-center justify-between px-4 sm:px-5"
+        className="relative flex h-14 w-full items-center justify-between px-4 md:px-10"
       >
         <span className="hidden tracking-[0.18rem] uppercase text-black/80 md:block md:text-xs">
           open for opportunities
@@ -48,7 +48,7 @@ console.log("el2 value: ",el2)
         </span>
 
         <span  className="mr-8 text-sm uppercase font-extralight text-black md:mr-48">
-          Nani
+          Nani kumar
         </span>
 
         <div className="relative">

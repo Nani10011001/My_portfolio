@@ -68,7 +68,7 @@ el2?.scrollIntoView({behavior:"smooth",block:"start"})
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true }}
-        className="flex flex-col justify-center gap-4 py-8"
+        className="flex flex-col  justify-center gap-4 py-8"
       >
         <motion.p variants={child} className="text-xs z-100 font-medium uppercase sm:text-sm">
           OPEN TO EXCITING OPPORTUNITIES.
